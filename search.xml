@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>2</title>
+      <link href="/2023/08/24/123/"/>
+      <url>/2023/08/24/123/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>洛谷P1670题解</title>
+      <link href="/2023/08/24/%E6%B4%9B%E8%B0%B7P1670%E9%A2%98%E8%A7%A3/"/>
+      <url>/2023/08/24/%E6%B4%9B%E8%B0%B7P1670%E9%A2%98%E8%A7%A3/</url>
+      
+        <content type="html"><![CDATA[<p>这道题题意就是让我们找到一个点，要求这个点的每个子树的大小都不超过 n 的一半。</p><p>我们可以以 1 为根先 dfs 一遍，计算出每个点的子树大小，然后枚举每个点，判断点的子树大小是否都小于 n 即可。这里需要特判一种情况，就是如果这个点不为 1，那么我们就要计算剩余点的个数。剩余点的个数就为点的总数减去这个点子树的大小。</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> n,d[<span class="number">10005</span>],x,y;</span><br><span class="line">vector&lt;<span class="type">int</span>&gt;a[<span class="number">10005</span>],son[<span class="number">10005</span>];</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> x,<span class="type">int</span> k)</span></span>&#123;d[x]=<span class="number">1</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> y:a[x])<span class="keyword">if</span>(y!=k)<span class="built_in">dfs</span>(y,x),son[x].<span class="built_in">push_back</span>(y),d[x]+=d[y];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=(cin&gt;&gt;n,<span class="number">1</span>);i&lt;n;i++)cin&gt;&gt;x&gt;&gt;y,a[x].<span class="built_in">push_back</span>(y),a[y].<span class="built_in">push_back</span>(x);</span><br><span class="line"><span class="type">bool</span> w=(<span class="built_in">dfs</span>(<span class="number">1</span>,<span class="number">-1</span>),<span class="number">1</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> x:son[i])<span class="keyword">if</span>(d[x]&gt;n/<span class="number">2</span>)<span class="keyword">goto</span> end;</span><br><span class="line"><span class="keyword">if</span>(d[i]&gt;=n/<span class="number">2</span>) cout&lt;&lt;i&lt;&lt;endl,w=<span class="number">0</span>;</span><br><span class="line">end:;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>(w) cout&lt;&lt;<span class="string">&quot;NONE&quot;</span>;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+  
+  
+    
+    
+    <entry>
+      <title>关于</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>电影</title>
+      <link href="/movies/index.html"/>
+      <url>/movies/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>分类</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>友链</title>
+      <link href="/link/index.html"/>
+      <url>/link/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>音乐</title>
+      <link href="/music/index.html"/>
+      <url>/music/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>标签</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+  
+</search>
